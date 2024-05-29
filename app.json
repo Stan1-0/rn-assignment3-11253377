@@ -20,6 +20,16 @@
         "backgroundColor": "#ffffff"
       }
     },
+    "fonts": [
+      {
+        "name": "Lato-Regular",
+        "files": ["Lato-Regular.ttf"]
+      },
+      {
+        "name": "Lato-Bold",
+        "files": ["Lato-Bold.ttf"]
+      }
+    ],
     "web": {
       "favicon": "./assets/favicon.png"
     }

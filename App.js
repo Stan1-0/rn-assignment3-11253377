@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  heading:{
+  heading: {
     fontSize: 30,
-    fontFamily: Lato,
-  }
+    fontFamily: 'Lato-Regular',
+  },
 });
 
 export default App;
