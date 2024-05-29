@@ -3,8 +3,8 @@ import { StyleSheet, Text, View } from "react-native";
 
 const App = () => {
   return (
-    <View style={{ flexDirection: "row", height: 100, padding: 20, fontSize: 24 }}>
-      <Text>Hello World!</Text>
+    <View style={styles.container}>
+      <Text style={styles.heading}>Hello World!</Text>
     </View>
   );
 };
@@ -12,10 +12,14 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#fff",
+    backgroundColor: "#E8D1BA",
     alignItems: "center",
     justifyContent: "center",
   },
+  heading:{
+    fontSize: 30,
+    fontFamily: Lato,
+  }
 });
 
 export default App;
