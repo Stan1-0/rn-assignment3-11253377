@@ -23,15 +23,22 @@
     "fonts": [
       {
         "name": "Lato-Regular",
-        "files": ["Lato-Regular.ttf"]
+        "files": [
+          "Lato-Regular.ttf"
+        ]
       },
       {
         "name": "Lato-Bold",
-        "files": ["Lato-Bold.ttf"]
+        "files": [
+          "Lato-Bold.ttf"
+        ]
       }
     ],
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "plugins": [
+      "expo-font"
+    ]
   }
 }

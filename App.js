@@ -3,8 +3,12 @@ import { StyleSheet, Text, View } from "react-native";
 
 const Header = () => {
   return (
-    <View style={styles.heading}>
-      <Text>Hello, Devs</Text>
+    <View style={styles.header}>
+      <Text style={styles.heading}>Hello, Devs</Text>
+      <Image
+        source={require("./assets/user.png")}
+        style={{ width: 100, height: 100 }}
+      />
     </View>
   );
 };
@@ -24,8 +28,14 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
+  header: {
+    flexGrow: 0,
+    flexShrink: 1,
+    flexBasis: "auto",
+  },
   heading: {
-    fontSize: 30,
+    fontSize: 32,
+    fontWeight: 700,
     fontFamily: "Lato-Bold",
     color: "#000000",
   },
