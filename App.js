@@ -1,10 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View } from "react-native";
 
+const Header = () => {
+  return (
+    <View style={styles.heading}>
+      <Text>Hello, Devs</Text>
+    </View>
+  );
+};
+
 const App = () => {
   return (
     <View style={styles.container}>
-      <Text style={styles.heading}>Hello World!</Text>
+      <Header />
     </View>
   );
 };
@@ -18,7 +26,8 @@ const styles = StyleSheet.create({
   },
   heading: {
     fontSize: 30,
-    fontFamily: 'Lato-Regular',
+    fontFamily: "Lato-Bold",
+    color: "#000000",
   },
 });
 
