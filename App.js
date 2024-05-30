@@ -1,14 +1,12 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 
 const Header = () => {
   return (
     <View style={styles.header}>
       <Text style={styles.heading}>Hello, Devs</Text>
-      <Image
-        source={require("./assets/user.png")}
-        style={{ width: 100, height: 100 }}
-      />
+      <Image source={require("./assets/user.png")} style={styles.logo} />
+      <StatusBar style="auto" />
     </View>
   );
 };
@@ -25,13 +23,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#E8D1BA",
-    alignItems: "center",
-    justifyContent: "center",
   },
   header: {
-    flexGrow: 0,
-    flexShrink: 1,
-    flexBasis: "auto",
+    flex: 1,
+  },
+  logo: {
+    width: 50,
+    height: 52,
   },
   heading: {
     fontSize: 32,
