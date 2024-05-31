@@ -1,17 +1,18 @@
 import { StatusBar } from "expo-status-bar";
 import { StyleSheet, Text, View, Image } from "react-native";
 
-const Header = () => {
-  return (
-    <View style={styles.header}>
-      <Text style={styles.heading}>Hello, Devs</Text>
-      <Image source={require("./assets/user.png")} style={styles.logo} />
-      <StatusBar style="auto" />
-    </View>
-  );
-};
-
 const App = () => {
+  const Header = () => {
+    return (
+      <View style={styles.header}>
+        <Text style={styles.headingText}>Hello, Devs</Text>
+        <Text style={styles.headingSubText}>14 tasks today</Text>
+        <Image source={require("./assets/user.png")} style={styles.logo} />
+        <StatusBar style="auto" />
+      </View>
+    );
+  };
+
   return (
     <View style={styles.container}>
       <Header />
@@ -25,17 +26,25 @@ const styles = StyleSheet.create({
     backgroundColor: "#E8D1BA",
   },
   header: {
-    flex: 1,
+    flexDirection: "row",
+    alignItems: "center",
+    justifyContent: "space-between",
+    marginBottom: 20,
   },
   logo: {
     width: 50,
     height: 52,
   },
-  heading: {
+  headingText: {
     fontSize: 32,
     fontWeight: 700,
     fontFamily: "Lato-Bold",
     color: "#000000",
+    lineHeight: 38.4,
+  },
+  headingSubText: {
+    fontSize: 12,
+    lineHeight: 14.4,
   },
 });
 
