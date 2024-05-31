@@ -1,22 +1,32 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image, TouchableOpacity,TextInput } from "react-native";
+import {
+  StyleSheet,
+  Text,
+  View,
+  Image,
+  TouchableOpacity,
+  TextInput,
+} from "react-native";
 
 const App = () => {
-
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Text style={styles.headingText}>Hello, Devs</Text>
-        <Text style={styles.headingSubText}>14 tasks today</Text>
-        <Image source={require("./assets/user.png")} style={styles.logo} />
-        <StatusBar style="auto" />
-      </View>
-      <View style={styles.search}>
-        <TextInput 
-        style={styles.searchInput}
-        placeholder="Search"
-        
-        />
+      <View style={styles.contain}>
+        <View style={styles.header}>
+          <View style={styles.leftContent}>
+            <Text style={styles.boldText}>Hello, Devs</Text>
+            <Text style={styles.normalText}>14 tasks devs</Text>
+          </View>
+          <TouchableOpacity style={styles.button}>
+            <Image source={require("./assets/user.png")} />
+          </TouchableOpacity>
+        </View>
+        <View style={styles.searchBar}>
+          <TextInput style={styles.input} placeholder="Search" />
+          <View style={styles.filterIcon}>
+            <Image source={require("./assets/filter.png")} />
+          </View>
+        </View>
       </View>
     </View>
   );
@@ -25,44 +35,88 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#f7f0e8",
-    padding: 20,
+    backgroundColor: "#F7F0E8",
+  },
+  contain: {
+    padding: 24,
+  },
+  boldText: {
+    fontSize: 32,
+    fontWeight: "bold",
   },
   header: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
     width: 354,
     height: 52,
-    top: 52,
-    left: 20,
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-    marginBottom: 20,
+    gap: 134,
   },
-  logo: {
+  leftContent: {},
+  button: {
+    backgroundColor: "white",
+    borderRadius: 9999,
+    padding: 8,
     width: 46,
     height: 45,
   },
-  headingText: {
-    fontSize: 32,
-    fontWeight: 700,
-    fontFamily: "Lato-Bold",
-    color: "#000000",
-    lineHeight: 38.4,
+  searchBar: {
+    flexDirection: "row",
+    justifyContent: "space-between",
+    alignItems: "center",
+    marginBottom: 20,
   },
-  headingSubText: {
-    fontSize: 12,
-    lineHeight: 14.4,
-  },
-  search: {
+  input: {
     backgroundColor: "white",
     width: "80%",
     height: 50,
     borderRadius: 10,
     padding: 5,
   },
-  searchInput: {
-    flex: 1,
-    margin: 10,
+  filterIcon: {
+    backgroundColor: "#E0522F",
+    width: 50,
+    height: 48,
+    padding: 8,
+    borderRadius: 9999,
+  },
+  categories: {
+    marginTop: 20,
+  },
+  categoryTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  categoryItem: {
+    backgroundColor: "white",
+    marginRight: 20,
+    padding: 20,
+    borderRadius: 9999,
+  },
+  categoryName: {
+    fontSize: 20,
+    fontWeight: "bold",
+  },
+  tasks: {
+    marginTop: 20,
+  },
+  taskTitle: {
+    fontSize: 24,
+    fontWeight: "bold",
+  },
+  taskItem: {
+    backgroundColor: "white",
+    border: "1px solid #E8D1BA",
+    marginRight: 20,
+    padding: 20,
+    borderRadius: 9999,
+    width: "100%",
+    marginBottom: 20,
+  },
+  taskName: {
+    fontSize: 20,
+    fontWeight: "500",
   },
 });
 
