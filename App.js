@@ -1,21 +1,23 @@
 import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, TouchableOpacity,TextInput } from "react-native";
 
 const App = () => {
-  const Header = () => {
-    return (
+
+  return (
+    <View style={styles.container}>
       <View style={styles.header}>
         <Text style={styles.headingText}>Hello, Devs</Text>
         <Text style={styles.headingSubText}>14 tasks today</Text>
         <Image source={require("./assets/user.png")} style={styles.logo} />
         <StatusBar style="auto" />
       </View>
-    );
-  };
-
-  return (
-    <View style={styles.container}>
-      <Header />
+      <View style={styles.search}>
+        <TextInput 
+        style={styles.searchInput}
+        placeholder="Search"
+        
+        />
+      </View>
     </View>
   );
 };
@@ -23,7 +25,8 @@ const App = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#E8D1BA",
+    backgroundColor: "#f7f0e8",
+    padding: 20,
   },
   header: {
     width: 354,
@@ -49,6 +52,17 @@ const styles = StyleSheet.create({
   headingSubText: {
     fontSize: 12,
     lineHeight: 14.4,
+  },
+  search: {
+    backgroundColor: "white",
+    width: "80%",
+    height: 50,
+    borderRadius: 10,
+    padding: 5,
+  },
+  searchInput: {
+    flex: 1,
+    margin: 10,
   },
 });
 
