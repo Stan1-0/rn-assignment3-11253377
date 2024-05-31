@@ -26,14 +26,18 @@ const styles = StyleSheet.create({
     backgroundColor: "#E8D1BA",
   },
   header: {
+    width: 354,
+    height: 52,
+    top: 52,
+    left: 20,
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
     marginBottom: 20,
   },
   logo: {
-    width: 50,
-    height: 52,
+    width: 46,
+    height: 45,
   },
   headingText: {
     fontSize: 32,
