@@ -59,6 +59,16 @@ const App = () => {
 
         <View style={styles.categories}>
           <Text style={styles.categoriesTitle}>Categories</Text>
+          <FlatList
+          data={categoriesData}
+          render={({item}) => (
+            <View style={styles.categoryItem}>
+              <Text style={styles.categoryName}>{item.name}</Text>
+              <Text style={styles.categoryDescription}>{item.description}</Text>
+              <Image></Image>
+            </View>
+          )}
+          />
         </View>
       </View>
     </View>
@@ -125,11 +135,6 @@ const styles = StyleSheet.create({
   },
   categories: {
     marginTop: 20,
-  },
-  categoriesTitle: {
-    fontSize: 20,
-    fontWeight: "bold",
-    lineHeight: 24,
   },
   categoryItem: {
     backgroundColor: "white",
