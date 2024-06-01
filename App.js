@@ -1,5 +1,6 @@
 import { StatusBar } from "expo-status-bar";
 import {
+  SafeAreaView,
   StyleSheet,
   Text,
   View,
@@ -7,7 +8,8 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
-import { FlatList } from "react-native-web";
+import { FlatList } from "react-native";
+
 
 const categoriesData = [
   {
@@ -17,7 +19,7 @@ const categoriesData = [
     Image: require("./assets/exercise.png"),
   },
   {
-    id: 1,
+    id: 2,
     name: "Study",
     description: "12 tasks",
     Image: require("./assets/study.png"),
@@ -32,50 +34,61 @@ const ongoingTask = [
 
 const App = () => {
   return (
-    <View style={styles.container}>
-      <View style={styles.contain}>
-        <View style={styles.header}>
-          <View style={styles.leftContent}>
-            <Text style={styles.boldText}>Hello, Devs</Text>
-            <Text style={styles.normalText}>14 tasks devs</Text>
-          </View>
-          <TouchableOpacity style={styles.button}>
-            <Image
-              source={require("./assets/user.png")}
-              style={styles.profileImage}
-            />
-          </TouchableOpacity>
-        </View>
-
-        <View style={styles.searchBar}>
-          <TextInput style={styles.input} placeholder="Search" />
-          <View style={styles.filterIcon}>
-            <Image
-              source={require("./assets/filter.png")}
-              style={styles.filterPicture}
-            />
-          </View>
-        </View>
-
-        <View style={styles.categories}>
-          <Text style={styles.categoriesTitle}>Categories</Text>
-          <FlatList
-          data={categoriesData}
-          render={({item}) => (
-            <View style={styles.categoryItem}>
-              <Text style={styles.categoryName}>{item.name}</Text>
-              <Text style={styles.categoryDescription}>{item.description}</Text>
-              <Image></Image>
+    <SafeAreaView style={styles.safeAreaContainer}>
+      <View style={styles.container}>
+        <View style={styles.contain}>
+          <View style={styles.header}>
+            <View style={styles.leftContent}>
+              <Text style={styles.boldText}>Hello, Devs</Text>
+              <Text style={styles.normalText}>14 tasks devs</Text>
             </View>
-          )}
-          />
+            <TouchableOpacity style={styles.button}>
+              <Image
+                source={require("./assets/user.png")}
+                style={styles.profileImage}
+              />
+            </TouchableOpacity>
+          </View>
+
+          <View style={styles.searchBar}>
+            <TextInput style={styles.input} placeholder="Search" />
+            <View style={styles.filterIcon}>
+              <Image
+                source={require("./assets/filter.png")}
+                style={styles.filterPicture}
+              />
+            </View>
+          </View>
+
+          <View style={styles.categories}>
+            <Text style={styles.categoriesTitle}>Categories</Text>
+            <FlatList
+              data={categoriesData}
+              renderItem={({ item }) => (
+                <View style={styles.categoryItem}>
+                  <Text style={styles.categoryName}>{item.name}</Text>
+                  <Text style={styles.categoryDescription}>
+                    {item.description}
+                  </Text>
+                  <Image source={item.Image} style={styles.categoryItem} />
+                </View>
+              )}
+              keyExtractor={(item) => item.id}
+              horizontal
+              showsHorizontalScrollIndicator = {false}
+            />
+          </View>
         </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
 const styles = StyleSheet.create({
+  safeAreaContainer: {
+    flex: 1,
+    backgroundColor: "#F7F0E8",
+  },
   container: {
     flex: 1,
     backgroundColor: "#F7F0E8",
@@ -136,11 +149,26 @@ const styles = StyleSheet.create({
   categories: {
     marginTop: 20,
   },
+  categoriesTitle: {
+    fontSize: 20,
+    lineHeight: 24,
+    fontWeight: "700",
+  },
   categoryItem: {
     backgroundColor: "white",
     marginRight: 20,
-    padding: 20,
-    borderRadius: 9999,
+    padding: 12,
+    borderRadius: 15,
+    gap: 10,
+    height: 186,
+    width:192
+  },
+  categoryImage: {
+    width: 151,
+    height: 132,
+    left: 20,
+    top: 41,
+    top: 298,
   },
   categoryName: {
     fontSize: 20,
