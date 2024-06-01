@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   TextInput,
 } from "react-native";
+import { FlatList } from "react-native-web";
 
 const App = () => {
   return (
@@ -18,14 +19,25 @@ const App = () => {
             <Text style={styles.normalText}>14 tasks devs</Text>
           </View>
           <TouchableOpacity style={styles.button}>
-            <Image source={require("./assets/user.png")} />
+            <Image
+              source={require("./assets/user.png")}
+              style={styles.profileImage}
+            />
           </TouchableOpacity>
         </View>
+
         <View style={styles.searchBar}>
           <TextInput style={styles.input} placeholder="Search" />
           <View style={styles.filterIcon}>
-            <Image source={require("./assets/filter.png")} />
+            <Image
+              source={require("./assets/filter.png")}
+              style={styles.filterPicture}
+            />
           </View>
+        </View>
+
+        <View style={styles.categories}>
+          <Text style={styles.categoriesTitle}>Categories</Text>
         </View>
       </View>
     </View>
@@ -43,6 +55,7 @@ const styles = StyleSheet.create({
   boldText: {
     fontSize: 32,
     fontWeight: "bold",
+    lineHeight: 38.4,
   },
   header: {
     flexDirection: "row",
@@ -56,8 +69,10 @@ const styles = StyleSheet.create({
   leftContent: {},
   button: {
     backgroundColor: "white",
-    borderRadius: 9999,
-    padding: 8,
+    borderRadius: 50,
+    padding: 5,
+  },
+  profileImage: {
     width: 46,
     height: 45,
   },
@@ -66,27 +81,34 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
     marginBottom: 20,
+    width: 353,
+    height: 49,
+  },
+  filterPicture: {
+    width: 34,
+    height: 34,
   },
   input: {
     backgroundColor: "white",
     width: "80%",
     height: 50,
     borderRadius: 10,
-    padding: 5,
+    padding: 8,
   },
   filterIcon: {
-    backgroundColor: "#E0522F",
+    backgroundColor: "#F0522F",
     width: 50,
     height: 48,
     padding: 8,
-    borderRadius: 9999,
+    borderRadius: 14,
   },
   categories: {
     marginTop: 20,
   },
-  categoryTitle: {
-    fontSize: 24,
+  categoriesTitle: {
+    fontSize: 20,
     fontWeight: "bold",
+    lineHeight: 24,
   },
   categoryItem: {
     backgroundColor: "white",
