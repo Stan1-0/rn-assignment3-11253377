@@ -9,6 +9,27 @@ import {
 } from "react-native";
 import { FlatList } from "react-native-web";
 
+const categoriesData = [
+  {
+    id: 1,
+    name: "Exercise",
+    description: "12 tasks",
+    Image: require("./assets/exercise.png"),
+  },
+  {
+    id: 1,
+    name: "Study",
+    description: "12 tasks",
+    Image: require("./assets/study.png"),
+  },
+];
+
+const ongoingTask = [
+  { id: 1, name: "Mobile App Development" },
+  { id: 2, name: "Web Development" },
+  { id: 3, name: "Push ups" },
+];
+
 const App = () => {
   return (
     <View style={styles.container}>
