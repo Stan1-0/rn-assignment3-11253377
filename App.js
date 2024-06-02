@@ -27,13 +27,13 @@ const categoriesData = [
     id: 3,
     name: "Code",
     description: "12 tasks",
-    Image: require("./assets/code.png"),
+    Image: require("./assets/coding.png"),
   },
   {
     id: 4,
     name: "Cook",
     description: "12 tasks",
-    Image: require("./assets/study.png"),
+    Image: require("./assets/cook.png"),
   },
   {
     id: 5,
