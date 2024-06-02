@@ -7,9 +7,8 @@ import {
   Image,
   TouchableOpacity,
   TextInput,
+  FlatList,
 } from "react-native";
-import { FlatList } from "react-native";
-
 
 const categoriesData = [
   {
@@ -21,6 +20,42 @@ const categoriesData = [
   {
     id: 2,
     name: "Study",
+    description: "12 tasks",
+    Image: require("./assets/study.png"),
+  },
+  {
+    id: 3,
+    name: "Code",
+    description: "12 tasks",
+    Image: require("./assets/code.png"),
+  },
+  {
+    id: 4,
+    name: "Cook",
+    description: "12 tasks",
+    Image: require("./assets/study.png"),
+  },
+  {
+    id: 5,
+    name: "Meditation",
+    description: "12 tasks",
+    Image: require("./assets/study.png"),
+  },
+  {
+    id: 6,
+    name: "Sleep",
+    description: "12 tasks",
+    Image: require("./assets/study.png"),
+  },
+  {
+    id: 7,
+    name: "CleanUp",
+    description: "12 tasks",
+    Image: require("./assets/study.png"),
+  },
+  {
+    id: 8,
+    name: "Gaming",
     description: "12 tasks",
     Image: require("./assets/study.png"),
   },
@@ -53,10 +88,12 @@ const App = () => {
           <View style={styles.searchBar}>
             <TextInput style={styles.input} placeholder="Search" />
             <View style={styles.filterIcon}>
+              <TouchableOpacity>
               <Image
                 source={require("./assets/filter.png")}
                 style={styles.filterPicture}
               />
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -70,12 +107,25 @@ const App = () => {
                   <Text style={styles.categoryDescription}>
                     {item.description}
                   </Text>
-                  <Image source={item.Image} style={styles.categoryItem} />
+                  <Image source={item.Image} style={styles.categoryImage} />
                 </View>
               )}
               keyExtractor={(item) => item.id}
               horizontal
-              showsHorizontalScrollIndicator = {false}
+              showsHorizontalScrollIndicator={false}
+            />
+          </View>
+
+          <View style={styles.tasks}>
+            <Text style={styles.taskTitle}>Ongoing Tasks</Text>
+            <FlatList
+              data={ongoingTask}
+              renderItem={({ item }) => (
+                <View style={styles.taskItem}>
+                  <Text style={styles.taskName}>{item.name}</Text>
+                </View>
+              )}
+              alwaysBounceVertical={true}
             />
           </View>
         </View>
@@ -147,12 +197,13 @@ const styles = StyleSheet.create({
     borderRadius: 14,
   },
   categories: {
-    marginTop: 20,
+    marginTop: -5,
   },
   categoriesTitle: {
     fontSize: 20,
     lineHeight: 24,
     fontWeight: "700",
+    marginBottom: 10,
   },
   categoryItem: {
     backgroundColor: "white",
@@ -161,38 +212,46 @@ const styles = StyleSheet.create({
     borderRadius: 15,
     gap: 10,
     height: 186,
-    width:192
+    width: 192,
   },
   categoryImage: {
-    width: 151,
-    height: 132,
-    left: 20,
-    top: 41,
-    top: 298,
+    width: 100,
+    height: 100,
+    marginTop: 10,
   },
   categoryName: {
     fontSize: 20,
     fontWeight: "bold",
   },
-  tasks: {
-    marginTop: 20,
+  categoryDescription: {
+    fontSize: 12,
+  },
+  task: {
+    marginTop: -5,
   },
   taskTitle: {
-    fontSize: 24,
+    fontSize: 20,
+    lineHeight: 24,
     fontWeight: "bold",
+    marginBottom: 15,
   },
   taskItem: {
     backgroundColor: "white",
-    border: "1px solid #E8D1BA",
-    marginRight: 20,
+    border: 1,
+    borderColor: "#E8D1BA",
     padding: 20,
-    borderRadius: 9999,
-    width: "100%",
+    borderRadius: 15,
+    width: 354,
+    height: 128,
     marginBottom: 20,
   },
   taskName: {
-    fontSize: 20,
-    fontWeight: "500",
+    fontSize: 16,
+    lineHeight: 19.2,
+    fontWeight: "700",
+    width: 200,
+    height: 19,
+    textAlign: "auto",
   },
 });
 
