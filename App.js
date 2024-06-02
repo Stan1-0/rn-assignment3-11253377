@@ -64,7 +64,19 @@ const categoriesData = [
 const ongoingTask = [
   { id: 1, name: "Mobile App Development" },
   { id: 2, name: "Web Development" },
-  { id: 3, name: "Push ups" },
+  { id: 3, name: "Software engineering" },
+  { id: 4, name: "DevOps" },
+  { id: 5, name: "Internship" },
+  { id: 6, name: "School" },
+  { id: 7, name: "Data Structures and Algorithm" },
+  { id: 8, name: "Calculus" },
+  { id: 9, name: "Database Management" },
+  { id: 10, name: "Python" },
+  { id: 11, name: "Project Management" },
+  { id: 12, name: "Agile Development" },
+  { id: 13, name: "Call Of Duty" },
+  { id: 14, name: "Indomie" },
+  { id: 15, name: "Yoga" },
 ];
 
 const App = () => {
@@ -89,10 +101,10 @@ const App = () => {
             <TextInput style={styles.input} placeholder="Search" />
             <View style={styles.filterIcon}>
               <TouchableOpacity>
-              <Image
-                source={require("./assets/filter.png")}
-                style={styles.filterPicture}
-              />
+                <Image
+                  source={require("./assets/filter.png")}
+                  style={styles.filterPicture}
+                />
               </TouchableOpacity>
             </View>
           </View>
@@ -125,7 +137,7 @@ const App = () => {
                   <Text style={styles.taskName}>{item.name}</Text>
                 </View>
               )}
-              alwaysBounceVertical={true}
+              keyExtractor={(item) => item.id}
             />
           </View>
         </View>
