@@ -87,7 +87,7 @@ const App = () => {
           <View style={styles.header}>
             <View style={styles.leftContent}>
               <Text style={styles.boldText}>Hello, Devs</Text>
-              <Text style={styles.normalText}>14 tasks devs</Text>
+              <Text style={styles.normalText}>14 tasks today</Text>
             </View>
             <TouchableOpacity style={styles.button}>
               <Image
@@ -138,6 +138,8 @@ const App = () => {
                 </View>
               )}
               keyExtractor={(item) => item.id}
+              vertical
+              showsVerticalScrollIndicator={false}
             />
           </View>
         </View>
@@ -248,10 +250,10 @@ const styles = StyleSheet.create({
     marginBottom: 15,
   },
   taskItem: {
-    backgroundColor: "white",
+    backgroundColor: "#FBF9F7",
     border: 1,
     borderColor: "#E8D1BA",
-    padding: 20,
+    padding: 40,
     borderRadius: 15,
     width: 354,
     height: 128,
