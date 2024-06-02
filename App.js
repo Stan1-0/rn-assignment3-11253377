@@ -39,25 +39,25 @@ const categoriesData = [
     id: 5,
     name: "Meditation",
     description: "12 tasks",
-    Image: require("./assets/study.png"),
+    Image: require("./assets/meditation.png"),
   },
   {
     id: 6,
     name: "Sleep",
     description: "12 tasks",
-    Image: require("./assets/study.png"),
+    Image: require("./assets/sleep.png"),
   },
   {
     id: 7,
     name: "CleanUp",
     description: "12 tasks",
-    Image: require("./assets/study.png"),
+    Image: require("./assets/cleanup.png"),
   },
   {
     id: 8,
     name: "Gaming",
     description: "12 tasks",
-    Image: require("./assets/study.png"),
+    Image: require("./assets/gaming.png"),
   },
 ];
 
